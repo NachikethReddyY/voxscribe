@@ -1,0 +1,23 @@
+[whisper]
+# Path to a CTranslate2-converted Whisper model directory,
+# or a size name like "base", "small", "medium", "large-v3"
+model_path = "base.en"
+device = "auto"          # "auto", "cpu", or "cuda"
+compute_type = "int8"    # "float16", "int8", "float32"
+language = "en"
+
+[ollama]
+base_url = "http://127.0.0.1:11434"
+model = "llama3.1:8b"
+timeout_seconds = 60
+system_prompt = """You are a writing assistant. Rewrite the following transcribed speech
+into clear, well-structured prose. Preserve the original meaning and tone.
+Fix grammar, remove filler words, and improve clarity. Return ONLY the rewritten text."""
+
+[hotkeys]
+transcribe = "<ctrl>+<shift>+s"
+smart_write = "<ctrl>+<shift>+d"
+
+[audio]
+sample_rate = 16000
+channels = 1
